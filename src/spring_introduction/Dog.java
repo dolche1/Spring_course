@@ -1,14 +1,20 @@
 package spring_introduction;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component("dogBean")
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+//@Component("dogBean")
 public class Dog implements Pet {
 
+    @PostConstruct
     protected void init() {
         System.out.println("Class Dog: Init method");
     }
 
+    @PreDestroy
     protected void destroy() {
         System.out.printf("Class Dog: Destroy method");
     }

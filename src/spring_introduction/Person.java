@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component("personBean")
+//@Component("personBean")
 public class Person {
 //    @Autowired
 //    @Qualifier("catBean")
@@ -15,22 +15,23 @@ public class Person {
     @Value("${person.age}")
     private int age;
 
-    public Person() {
-        System.out.println("Person bean is initialized");
-    }
+//    public Person() {
+//        System.out.println("Person bean is initialized");
+//    }
 
 //    @Autowired
     public void setPet(Pet pet) {
         this.pet = pet;
-        System.out.println("Class person: AnyMethod");
+
     }
     public void callYouPet() {
         pet.say();
     }
 
-    @Autowired
-    public Person(@Qualifier("catBean") Pet pet) {
+//    @Autowired
+    public Person(Pet pet) {
         this.pet = pet;
+
     }
 
     public void setSurname(String surname) {
